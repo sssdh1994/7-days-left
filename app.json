@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/achievement/achievement",
+    "pages/note/note"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#00bfff",
+    "navigationBarTitleText": "7days left",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "grey",
+    "selectedColor": "#ffffff",
+    "borderStyle": "white",
+    "backgroundColor":"#00bfff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/achievement/achievement",
+        "text": "事迹"
+      },
+      {
+        "pagePath": "pages/note/note",
+        "text": "笔记"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我的"
+      }
+    ]
+  }
+}

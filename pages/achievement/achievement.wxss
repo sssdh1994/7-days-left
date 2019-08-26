@@ -1,0 +1,12 @@
+.achievement-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  width:100%;
+}
+.achievement-item {
+  margin: 20rpx;
+  padding: 20rpx 20rpx;
+  border:1rpx solid black;
+  width:80%;
+}

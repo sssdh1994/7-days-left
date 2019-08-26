@@ -1,0 +1,11 @@
+<!--achievement.wxml-->
+<view>
+  <view class="container achievement-list">
+    <view  class='achievement-item'>
+      <button bindtap="clickMe">点击添加事迹</button>
+    </view>
+    <block wx:for="{{achievements}}" wx:for-item="achievement">
+      <text class="achievement-item">{{index + 1}}. {{achievement}}</text>
+    </block>
+  </view>
+</view>
