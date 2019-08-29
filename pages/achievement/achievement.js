@@ -3,7 +3,21 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
-    achievements: [],
+    achievements: [
+      {
+        title:'考四级',
+        leftdays:66
+      },
+      {
+        title: '学会游泳',
+        leftdays: 60
+      },
+      {
+        title: '考六级',
+        leftdays: 365
+      }
+    ],
+    //achievements: [],
     leftTime:0,
     something:'',
   },
@@ -14,13 +28,14 @@ Page({
     wx.setStorageSync('achievements', achievements)
   },
   clickMe() {
-    console.log('click')
+    wx.navigateTo({
+      url: '../addachievement/addachievement',
+    })
   },
-  onLoad: function () {
+  onShow: function () {
+    this.achievements = wx.getStorageSync('achievements') || []
     this.setData({
-      achievements: (wx.getStorageSync('logs') || []).map(item => {
-        return util.formatTime(new Date(item))
-      })
+      achievements: this.achievements
     })
   }
 })

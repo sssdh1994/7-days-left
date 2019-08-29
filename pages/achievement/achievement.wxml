@@ -1,11 +1,16 @@
 <!--achievement.wxml-->
 <view>
   <view class="container achievement-list">
-    <view  class='achievement-item'>
-      <button bindtap="clickMe">点击添加事迹</button>
-    </view>
     <block wx:for="{{achievements}}" wx:for-item="achievement">
-      <text class="achievement-item">{{index + 1}}. {{achievement}}</text>
+      <view class="achievement-item">
+        {{achievement.title}}
+        <span class='leftdays'>
+          还剩下
+          <span style='color:red'>{{achievement.leftdays}}</span>
+          天
+        </span>
+      </view>
     </block>
+    <button bindtap="clickMe" class='confirm'>点击添加事迹</button>
   </view>
 </view>

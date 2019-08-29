@@ -1,7 +1,7 @@
 .achievement-list {
   display: flex;
   flex-direction: column;
-  padding: 40rpx;
+  padding: 40rpx
 }
 .achievement-item {
   margin: 20rpx;
@@ -10,8 +10,12 @@
   width:500rpx;
   border-radius:10rpx
 }
+.leftdays-date{
+  float: right;
+}
 .leftdays{
   float: right;
+  color: red
 }
 .confirm{
   width: 250rpx;

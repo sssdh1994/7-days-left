@@ -1,8 +1,10 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/achievement/achievement",
+    "pages/index/index",
+    "pages/addachievement/addachievement",
+    "pages/logs/logs",
+
     "pages/note/note"
   ],
   "window":{
