@@ -1,12 +1,12 @@
 <!--achievement.wxml-->
 <view>
   <view class="container achievement-list">
-    <block wx:for="{{achievements}}" wx:for-item="achievement">
-      <view class="achievement-item">
-        {{achievement.title}}
+    <block wx:for="{{achievements}}">
+      <view class="achievement-item" wx:for-index="index" bindtap='clickIndex' data-index="{{index}}">
+        {{item.title}}
         <span class='leftdays'>
           还剩下
-          <span style='color:red'>{{achievement.leftdays}}</span>
+          <span style='color:red'>{{item.leftdays}}</span>
           天
         </span>
       </view>
