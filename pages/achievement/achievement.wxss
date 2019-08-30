@@ -10,10 +10,18 @@
   width:500rpx;
   border-radius:10rpx
 }
+.delete{
+  padding-bottom: 20rpx;
+  width:500rpx;
+  border-radius:10rpx;
+  color:#808080;
+  text-align: center;
+}
 .leftdays{
   float: right;
 }
 .confirm{
   width: 250rpx;
+  font-size: 32rpx;
   background-color:#00bfff
 }

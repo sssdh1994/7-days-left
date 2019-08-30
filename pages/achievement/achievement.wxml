@@ -11,6 +11,7 @@
         </span>
       </view>
     </block>
+    <view class="delete" wx:if="{{achievements.length}}">点击相应事迹可删除</view>
     <button bindtap="clickMe" class='confirm'>点击添加事迹</button>
   </view>
 </view>
