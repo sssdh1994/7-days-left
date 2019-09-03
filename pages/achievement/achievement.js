@@ -44,6 +44,7 @@ Page({
           that.setData({
             achievements: that.achievements
           })
+          that.achievements.map(item => delete item.leftdays)
           wx.setStorageSync('achievements', that.achievements)
         } else if (res.cancel) {
           //donothing
@@ -58,6 +59,9 @@ Page({
       return a.leftdays - b.leftdays
     }
     this.achievements = wx.getStorageSync('achievements') || []
+    let today = new Date().getTime()
+    this.achievements.map(item => item.leftdays = Math.floor(((item.targetdate - today) / 1000 / 60 / 60 / 24) + 1))
+    console.log(this.leftdays)
     this.achievements.sort(compare)
     this.setData({
       achievements: this.achievements

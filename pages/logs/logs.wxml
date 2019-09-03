@@ -1,6 +1,7 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<!--note.wxml-->
+<view>
+  <view class="container logs-list">
+    <button bindtap="readAchievement" class='confirm'>查看事迹</button>
+    <button bindtap="readNote" class='confirm'>查看笔记</button>
+  </view>
 </view>

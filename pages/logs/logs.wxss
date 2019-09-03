@@ -1,8 +1,11 @@
-.log-list {
+.logs-list {
   display: flex;
   flex-direction: column;
   padding: 40rpx;
 }
-.log-item {
-  margin: 10rpx;
+.confirm{
+  margin: 40rpx;
+  width: 250rpx;
+  font-size: 32rpx;
+  background-color:#00bfff
 }

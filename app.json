@@ -1,11 +1,12 @@
 {
   "pages":[
-    "pages/achievement/achievement",
+    "pages/note/note",
     "pages/index/index",
     "pages/addachievement/addachievement",
     "pages/logs/logs",
-
-    "pages/note/note"
+    "pages/addnote/addnote",
+    "pages/achievement/achievement",
+    "pages/noteindex/noteindex"
   ],
   "window":{
     "backgroundTextStyle":"light",

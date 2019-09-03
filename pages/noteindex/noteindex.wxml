@@ -1,6 +1,6 @@
 <!--addachievement.wxml-->
 <view class="container achievement-list">
-  <form>
+  <!-- <form>
     <view class='achievement-item'>
       <input bindinput='inputBind' placeholder="你想要添加的事迹，例如：瘦10斤" class='input' value='{{title}}'/>
     </view>
@@ -17,5 +17,6 @@
     <button class='confirm' bindtap='confirm'>
       确定
     </button>
-  </form>
+  </form> -->
+  这是笔记页面
 </view>                                   

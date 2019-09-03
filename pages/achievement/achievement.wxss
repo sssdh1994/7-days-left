@@ -6,12 +6,13 @@
 .achievement-item {
   margin: 20rpx;
   padding: 20rpx 20rpx;
-  border:1rpx solid black;
+  border:1rpx solid rgba(0,0,0,0.5);
   width:500rpx;
-  border-radius:10rpx
+  border-radius:10rpx;
+  background-color:#ffffff
 }
 .delete{
-  padding-bottom: 20rpx;
+  padding-top: 20rpx;
   width:500rpx;
   border-radius:10rpx;
   color:#808080;
@@ -21,6 +22,7 @@
   float: right;
 }
 .confirm{
+  margin: 40rpx;
   width: 250rpx;
   font-size: 32rpx;
   background-color:#00bfff

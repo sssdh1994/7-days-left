@@ -1,6 +1,24 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<!--note.wxml-->
+<!-- <view>
+  <view class="container button-list">
+    <button bindtap="addNote" class='confirm'>点击添加笔记</button>
+    <button bindtap="readNote" class='confirm'>查看笔记</button>
+  </view>
+</view> -->
+
+
+<view class="outer">
+  <view class='left'>
+    <block wx:for="{{achievements}}" class="achievement-list">
+      <view class="achievement-item" wx:for-index="index" bindtap='clickIndex' data-index="{{index}}">
+        {{item.title}}
+        <span class='leftdays'>
+          还剩下
+          <span style='color:red'>{{item.leftdays}}</span>
+          天
+        </span>
+      </view>
+    </block>
+  </view>
+  <view class='right'>right</view>
 </view>
