@@ -18,6 +18,18 @@ page{
   border-radius:10rpx;
   background-color:#ffffff
 }
+.note-list {
+  padding: 40rpx;
+}
+.note-item{
+  float: left;
+  margin: 20rpx;
+  padding: 20rpx 20rpx;
+  border:1rpx solid rgba(0,0,0,0.5);
+  border-radius:10rpx;
+  background-color:#ffffff;
+  width:30%;
+}
 .left{
   float: left;
   width:33.3333%;

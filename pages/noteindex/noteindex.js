@@ -10,6 +10,9 @@ Page({
     title:'',
     targetdate: new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+new Date().getDate(),
     leftdays:0,
+    nownote:{},
+    nownotetitle: '',
+    nownotedetail: '',
   },
   getAcievementList(){
     console.log(wx.getStorageSync('achievements'))
@@ -53,8 +56,14 @@ Page({
       })
     }
   },
-  onLoad: function () {
-    this.achievements = wx.getStorageSync('achievements') || []
-    this.leftdays = 0
+  onLoad: function (options) {
+    this.nownotetitle = options.nownotetitle
+    this.nownotedetail = options.nownotedetail
+    this.setData({
+      nownotetitle: this.nownotetitle,
+      nownotedetail: this.nownotedetail
+    })
+    // this.achievements = wx.getStorageSync('achievements') || []
+    // this.leftdays = 0
   }
 })

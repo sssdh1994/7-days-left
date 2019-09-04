@@ -8,17 +8,20 @@
 
 
 <view class="outer">
-  <view class='left'>
-    <block wx:for="{{achievements}}" class="achievement-list">
+  <scroll-view class='left' scroll-y >
+    <block wx:for="{{categories}}" class="achievement-list">
       <view class="achievement-item" wx:for-index="index" bindtap='clickIndex' data-index="{{index}}">
         {{item.title}}
-        <span class='leftdays'>
-          还剩下
-          <span style='color:red'>{{item.leftdays}}</span>
-          天
-        </span>
       </view>
     </block>
-  </view>
-  <view class='right'>right</view>
+    <button bindtap='addNote'>点击增加笔记类目</button>
+  </scroll-view>
+  <scroll-view class='right' scroll-y >
+    <block wx:for="{{categories[nowindex].notes}}" class="note-list">
+      <view class="note-item" wx:for-item="item" bindtap='clickNote' data-item="{{item}}">
+        {{item.notetitle}}
+      </view>
+    </block>
+    <button bindtap='addNote'>点击增加笔记类目</button>
+  </scroll-view>
 </view>
