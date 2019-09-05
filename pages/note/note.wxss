@@ -28,7 +28,28 @@ page{
   border:1rpx solid rgba(0,0,0,0.5);
   border-radius:10rpx;
   background-color:#ffffff;
-  width:30%;
+  width:33%;
+}
+.addCategory{
+  margin: 20rpx;
+  border:1rpx solid rgba(0,0,0,0.5);
+  border-radius:10rpx;
+  font-size: 24rpx;
+  background-color:#00bfff
+}
+.addNote{
+  float: left;
+  margin: 20rpx;
+  padding: 20rpx 20rpx;
+  border:1rpx solid rgba(0,0,0,0.5);
+  border-radius:10rpx;
+  background-color:#00bfff;
+  font-size: 24rpx;
+  text-align: center;
+  width:33%;
+}
+.hoveraddNote{
+  color:rgba(0,0,0,0.7)
 }
 .left{
   float: left;
@@ -41,4 +62,7 @@ page{
   width:66.6666%;
   height: 100%;
   background-color: rgba(220,220,220,0.8)
+}
+.input{
+  font-size: 24rpx;
 }

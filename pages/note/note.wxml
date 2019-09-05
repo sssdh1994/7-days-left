@@ -14,7 +14,11 @@
         {{item.title}}
       </view>
     </block>
-    <button bindtap='addNote'>点击增加笔记类目</button>
+    <view class='achievement-item' wx:if="{{showNewCaterory}}">
+      <input bindinput='inputBind' placeholder="想要添加的类目" class='input' value='{{newCateroryTitle}}' />
+    </view>
+    <button bindtap='addCategory' class="addCategory" wx:if="{{!showNewCaterory}}">点击增加类目</button>
+    <button bindtap='addCategoryConfirm' class="addCategory" wx:if="{{showNewCaterory}}">确定</button>
   </scroll-view>
   <scroll-view class='right' scroll-y >
     <block wx:for="{{categories[nowindex].notes}}" class="note-list">
@@ -22,6 +26,6 @@
         {{item.notetitle}}
       </view>
     </block>
-    <button bindtap='addNote'>点击增加笔记类目</button>
+    <view bindtap='addNote' class="addNote" hover-class="hoveraddNote" hover-start-time='0' hover-stay-time='0'>点击增加笔记</view>
   </scroll-view>
 </view>
