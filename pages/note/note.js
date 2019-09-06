@@ -45,6 +45,7 @@ Page({
     nownotedetail: '',
     showNewCaterory:false,
     newCateroryTitle:'',
+    noteindex:0,
   },
   //增加类目
   addCategory(){
@@ -56,13 +57,13 @@ Page({
   //增加类目确认
   addCategoryConfirm(){
     if (this.newCateroryTitle){
-      // let param = {}
-      // param.title = this.newCateroryTitle
-      // this.categories.push(param)
-      // wx.setStorageSync('categories', this.categories)
-      // this.setData({
-      //   categories: this.categories
-      // })
+      let param = {}
+      param.title = this.newCateroryTitle
+      this.categories.push(param)
+      wx.setStorageSync('categories', this.categories)
+      this.setData({
+        categories: this.categories
+      })
     }
     this.showNewCaterory = !this.showNewCaterory
     this.newCateroryTitle = ''
@@ -72,8 +73,10 @@ Page({
   },
   //增加笔记
   addNote() {
+    this.categories = this.categories || this.data.categories
+    this.nowindex = this.nowindex || this.data.nowindex
     wx.navigateTo({
-      url: '../addnote/addnote',
+      url: '../addnote/addnote?title=' + this.categories[this.nowindex].title + '&nowindex=' + this.nowindex,
     })
   },
   readNote() {
@@ -93,18 +96,19 @@ Page({
   },
   //点击笔记
   clickNote(item){
+    this.nowindex = this.nowindex || 0
+    this.noteindex = item.currentTarget.dataset.noteindex
     this.nownote = item.currentTarget.dataset.item
-    console.log('note界面的nownote',this.nownote)
     this.nownotetitle = item.currentTarget.dataset.item.notetitle
     this.nownotedetail = item.currentTarget.dataset.item.notedetail
     wx.navigateTo({
-      url: '../noteindex/noteindex?nownotetitle=' + this.nownotetitle + '&nownotedetail=' + this.nownotedetail,
+      url: '../noteindex/noteindex?nownotetitle=' + this.nownotetitle + '&nownotedetail=' + this.nownotedetail + '&noteindex=' + this.noteindex + '&nowindex=' + this.nowindex,
     })
   },
   onShow: function () {
-    // this.categories = wx.getStorageSync('categories') || []
-    // this.setData({
-    //   categories: this.categories
-    // })
+    this.categories = wx.getStorageSync('categories') || []
+    this.setData({
+      categories: this.categories
+    })
   }
 })

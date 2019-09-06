@@ -1,5 +1,6 @@
 {
   "pages":[
+    
     "pages/note/note",
     "pages/index/index",
     "pages/addachievement/addachievement",

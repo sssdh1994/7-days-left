@@ -1,21 +1,17 @@
 <!--addachievement.wxml-->
-<view class="container achievement-list">
-  <form>
+<view class="outer">
+  <form class="container-c achievement-list">
     <view class='achievement-item'>
-      <input bindinput='inputBind' placeholder="你想要添加的事迹，例如：瘦10斤" class='input' value='{{title}}'/>
+      <input bindinput='inputBind' placeholder="你想要添加的类目" class='input' value='{{title}}'/>
     </view>
     <view class='achievement-item'>
-      <picker mode='date' value="{{targetdate}}" start="2019-01-01" end="2029-12-31" bindchange="bindDateChange">
-        <view class="picker">
-          点击此处选择日期: <span class='leftdays-date'>{{targetdate}}</span>
-        </view>
-      </picker>
+      <input bindinput='inputBindNotetitle' placeholder="你想要添加的笔记" class='input' value='{{notetitle}}'/>
     </view>
-    <view class='achievement-item'>
-      剩余天数：<span class='leftdays'>{{leftdays}}</span>
-    </view>
-    <button class='confirm' bindtap='confirm'>
-      确定
-    </button>
   </form>
+  <view class='achievement-item-detail'>
+    <textarea bindinput='inputBindNotedetail' placeholder="你想要添加的内容" class='inputdetail' value='{{notedetail}}' maxlength='400'></textarea>
+  </view>
+  <button class='confirm' bindtap='confirm'>
+    确定
+  </button>
 </view>                                   

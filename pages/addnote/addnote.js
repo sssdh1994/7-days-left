@@ -3,13 +3,11 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
-    achievements: [],
-    oneachievement:{},
-    leftTime:0,
-    something:'',
+    categories:[],
+    notetitle:'',
+    notedetail:'',
     title:'',
-    targetdate: new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+new Date().getDate(),
-    leftdays:0,
+    nowindex:0,
   },
   getAcievementList(){
     console.log(wx.getStorageSync('achievements'))
@@ -23,38 +21,40 @@ Page({
   inputBind :function(e){
     this.title = e.detail.value
   },
-  bindDateChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    console.log('e', e)
-    this.targetdate = new Date(e.detail.value).getTime()
-    let today = new Date().getTime()
-    this.leftdays = Math.floor(((this.targetdate - today)/1000/60/60/24)+1)
-    console.log(this.leftdays)
-    this.setData({
-      targetdate: e.detail.value,
-      leftdays: this.leftdays
-    })
+  inputBindNotetitle: function (e) {
+    this.notetitle = e.detail.value
   },
+  inputBindNotedetail: function (e) {
+    this.notedetail = e.detail.value
+  },
+  
   confirm(){
-    if (!this.title){
+    if (this.notetitle && this.notedetail && this.title){
+      let tem = {}
+      tem.notetitle = this.notetitle
+      tem.notedetail = this.notedetail
+      this.categories[this.nowindex].title = this.title
+      if (!this.categories[this.nowindex].notes){
+        this.categories[this.nowindex].notes = []
+      }
+      this.categories[this.nowindex].notes.push(tem)
+      wx.setStorageSync('categories', this.categories)
+      wx.navigateBack()
+    }else{
       wx.showToast({
-        title: '请输入新事迹',
+        title: '请输入相应的内容',
         icon: 'none',
         duration: 2000
       })
-    }else{
-      this.oneachievement = {}
-      this.oneachievement.title = this.title
-      this.oneachievement.targetdate = this.targetdate
-      this.achievements.push(this.oneachievement)
-      wx.setStorageSync('achievements', this.achievements)
-      wx.switchTab({
-        url: '../achievement/achievement'
-      })
     }
   },
-  onLoad: function () {
-    this.achievements = wx.getStorageSync('achievements') || []
-    this.leftdays = 0
+  onLoad: function (options) {
+    console.log(options)
+    this.title = options.title
+    this.nowindex = parseInt(options.nowindex)
+    this.setData({
+      title: this.title,
+    })
+    this.categories = wx.getStorageSync('categories') || []
   }
 })

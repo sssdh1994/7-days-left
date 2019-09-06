@@ -19,6 +19,7 @@
     </button>
   </form> -->
   这是笔记页面
-  {{nownotetitle}}
-  {{nownotedetail}}
+  <view>{{nownotetitle}}</view>
+  <view>{{nownotedetail}}</view>
+  <button bindtap='delete'>删除这个笔记</button>
 </view>                                   
