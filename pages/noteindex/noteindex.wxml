@@ -1,25 +1,16 @@
-<!--addachievement.wxml-->
-<view class="container achievement-list">
-  <!-- <form>
+<!--noteindex.wxml-->
+
+<view class="outer">
+  <form class="container-c achievement-list">
     <view class='achievement-item'>
-      <input bindinput='inputBind' placeholder="你想要添加的事迹，例如：瘦10斤" class='input' value='{{title}}'/>
+      <view class='input'>{{nowindexTitle}}</view>
     </view>
     <view class='achievement-item'>
-      <picker mode='date' value="{{targetdate}}" start="2019-01-01" end="2029-12-31" bindchange="bindDateChange">
-        <view class="picker">
-          点击此处选择日期: <span class='leftdays-date'>{{targetdate}}</span>
-        </view>
-      </picker>
+      <view class='input'>{{nownotetitle}}</view>
     </view>
-    <view class='achievement-item'>
-      剩余天数：<span class='leftdays'>{{leftdays}}</span>
-    </view>
-    <button class='confirm' bindtap='confirm'>
-      确定
-    </button>
-  </form> -->
-  这是笔记页面
-  <view>{{nownotetitle}}</view>
-  <view>{{nownotedetail}}</view>
-  <button bindtap='delete'>删除这个笔记</button>
-</view>                                   
+  </form>
+  <view class='achievement-item-detail'>
+    <view class='inputdetail' maxlength='400'>{{nownotedetail}}</view>
+  </view>
+  <button bindtap='delete' class='confirm'>删除这个笔记</button>
+</view>   

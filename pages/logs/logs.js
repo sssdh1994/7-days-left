@@ -22,8 +22,8 @@ Page({
     something: '',
   },
   readNote() {
-    wx.navigateTo({
-      url: '../noteindex/noteindex',
+    wx.switchTab({
+      url: '../note/note',
     })
   },
   readAchievement() {

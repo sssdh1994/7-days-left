@@ -1,14 +1,29 @@
+page{
+  height: 100%
+  
+}
+.outer{
+  height: 100%
+}
+.container-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
 .achievement-list {
   display: flex;
   flex-direction: column;
-  padding: 40rpx
+  padding: 40rpx;
 }
 .achievement-item {
   margin: 20rpx;
   padding: 20rpx 20rpx;
   border:1rpx solid black;
   width:500rpx;
-  border-radius:10rpx
+  border-radius:10rpx;
+  background-color:#ffffff;
 }
 .leftdays-date{
   float: right;
@@ -16,6 +31,21 @@
 .leftdays{
   float: right;
   color: red
+}
+.achievement-item-detail{
+  height:60%;
+}
+.inputdetail{
+  margin-top: -40rpx;
+  padding: 20rpx 20rpx;
+  position: relative;
+  left: calc(50% - 272rpx);
+  border:1rpx solid black;
+  width:500rpx;
+  border-radius:10rpx;
+  background-color:#ffffff;
+  display: block;
+  height:90%;
 }
 .confirm{
   width: 250rpx;

@@ -1,7 +1,7 @@
 <!--note.wxml-->
 <view>
   <view class="container logs-list">
-    <button bindtap="readAchievement" class='confirm'>查看事迹</button>
-    <button bindtap="readNote" class='confirm'>查看笔记</button>
+    <button bindtap="readAchievement" class='confirm'>事迹记录</button>
+    <button bindtap="readNote" class='confirm'>笔记管理</button>
   </view>
 </view>
