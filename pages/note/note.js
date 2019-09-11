@@ -73,11 +73,19 @@ Page({
   },
   //增加笔记
   addNote() {
-    this.categories = this.categories || this.data.categories
-    this.nowindex = this.nowindex || this.data.nowindex
-    wx.navigateTo({
-      url: '../addnote/addnote?title=' + this.categories[this.nowindex].title + '&nowindex=' + this.nowindex,
-    })
+    if (!this.nowindex) {
+      wx.showToast({
+        title: '请先添加一个类目',
+        icon: 'none',
+        duration: 2000
+      })
+    } else {
+      this.categories = this.categories || this.data.categories
+      this.nowindex = this.nowindex || this.data.nowindex
+      wx.navigateTo({
+        url: '../addnote/addnote?title=' + this.categories[this.nowindex].title + '&nowindex=' + this.nowindex,
+      })
+    }
   },
   readNote() {
     wx.navigateTo({

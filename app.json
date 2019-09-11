@@ -1,9 +1,9 @@
 {
   "pages":[
     
-    "pages/note/note",
     "pages/index/index",
     "pages/addachievement/addachievement",
+    "pages/note/note",
     "pages/logs/logs",
     "pages/addnote/addnote",
     "pages/achievement/achievement",
