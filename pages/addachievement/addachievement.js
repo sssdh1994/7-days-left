@@ -29,7 +29,7 @@ Page({
     this.targetdate = new Date(e.detail.value).getTime()
     let today = new Date().getTime()
     this.leftdays = Math.floor(((this.targetdate - today)/1000/60/60/24)+1)
-    console.log(this.leftdays)
+    console.log(this.targetdate)
     this.setData({
       targetdate: e.detail.value,
       leftdays: this.leftdays
@@ -45,7 +45,7 @@ Page({
     }else{
       this.oneachievement = {}
       this.oneachievement.title = this.title
-      this.oneachievement.targetdate = this.targetdate
+      this.oneachievement.targetdate = this.targetdate || new Date(this.data.targetdate).getTime()
       this.achievements.push(this.oneachievement)
       wx.setStorageSync('achievements', this.achievements)
       wx.switchTab({

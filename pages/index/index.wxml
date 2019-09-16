@@ -7,6 +7,16 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
+  <block wx:for="{{achievements}}">
+    <view class="achievement-item" wx:for-index="index" bindtap='clickIndex' data-index="{{index}}" wx:if="{{item.leftdays>=0}}">
+      {{item.title}}
+      <span class='leftdays'>
+        还剩下
+        <span style='color:red'>{{item.leftdays}}</span>
+        天
+      </span>
+    </view>
+  </block>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>

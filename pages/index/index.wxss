@@ -17,5 +17,16 @@
 }
 
 .usermotto {
-  margin-top: 200px;
+  margin-top: 100px;
+}
+.achievement-item {
+  margin-top: 100px;
+  padding: 20rpx 20rpx;
+  border:1rpx solid rgba(0,0,0,0.5);
+  width:500rpx;
+  border-radius:10rpx;
+  background-color:#ffffff
+}
+.leftdays{
+  float: right;
 }

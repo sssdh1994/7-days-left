@@ -18,13 +18,14 @@ Page({
     wx.setStorageSync('achievements', achievements)
   },
   delete(){
+    let that = this
     wx.showModal({
       title: '提示',
       content: '你要删除这个笔记吗？',
       success(res) {
         if (res.confirm) {
-          this.categories[this.nowindex].notes.splice(this.noteindex, 1)
-          this.categories = wx.setStorageSync('categories', this.categories)
+          that.categories[that.nowindex].notes.splice(that.noteindex, 1)
+          that.categories = wx.setStorageSync('categories', that.categories)
           wx.navigateBack()
         } else if (res.cancel) {
           //donothing

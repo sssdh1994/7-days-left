@@ -26,6 +26,11 @@ Page({
       url: '../note/note',
     })
   },
+  readPassedAchievement(){
+    wx.navigateTo({
+      url: '../passedachievement/passedachievement',
+    })
+  },
   readAchievement() {
     wx.switchTab({
       url: '../achievement/achievement',

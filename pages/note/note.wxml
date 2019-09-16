@@ -10,7 +10,7 @@
 <view class="outer">
   <scroll-view class='left' scroll-y >
     <block wx:for="{{categories}}" class="achievement-list">
-      <view class="achievement-item" wx:for-index="index" bindtap='clickIndex' data-index="{{index}}">
+      <view class="achievement-item" wx:for-index="index" bindtap='clickIndex' bindtouchstart='touchStart' bindtouchend='touchEnd' data-index="{{index}}">
         {{item.title}}
       </view>
     </block>

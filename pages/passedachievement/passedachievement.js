@@ -32,29 +32,6 @@ Page({
       url: '../addachievement/addachievement',
     })
   },
-  clickIndex(index){
-    let that = this
-    let temIndex = index.currentTarget.dataset.index
-    wx.showModal({
-      title: '提示',
-      content: '你要删除事迹：' + this.achievements[temIndex].title+'吗？',
-      success(res) {
-        if (res.confirm) {
-          // console.log(temIndex)
-          that.achievements.splice(temIndex,1)
-          that.setData({
-            achievements: that.achievements
-          })
-          that.achievements.map(item => delete item.leftdays)
-          wx.setStorageSync('achievements', that.achievements)
-        } else if (res.cancel) {
-          //donothing
-        }
-      }
-    })
-    console.log(temIndex)
-    console.log(this.achievements)
-  },
   onShow: function () {
     let compare = function(a,b){
       return a.leftdays - b.leftdays
@@ -62,6 +39,8 @@ Page({
     this.achievements = wx.getStorageSync('achievements') || []
     let today = new Date().getTime()
     this.achievements.map(item => item.leftdays = Math.floor(((item.targetdate - today) / 1000 / 60 / 60 / 24) + 1))
+    this.achievements = this.achievements.filter(item => item.leftdays < 0)
+    this.achievements.map(item => item.leftdays = - item.leftdays)
     console.log(this.leftdays)
     this.achievements.sort(compare)
     this.setData({

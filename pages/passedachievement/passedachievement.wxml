@@ -1,0 +1,15 @@
+<!--passedachievement.wxml-->
+<view>
+  <view class="container achievement-list">
+    <block wx:for="{{achievements}}">
+      <view class="achievement-item" wx:for-index="index" bindtap='clickIndex' data-index="{{index}}">
+        {{item.title}}
+        <span class='leftdays'>
+          已完成
+          <span style='color:red'>{{item.leftdays}}</span>
+          天
+        </span>
+      </view>
+    </block>
+  </view>
+</view>

@@ -46,6 +46,8 @@ Page({
     showNewCaterory:false,
     newCateroryTitle:'',
     noteindex:0,
+    touchStart:0,
+    touchEnd:0,
   },
   //增加类目
   addCategory(){
@@ -73,7 +75,8 @@ Page({
   },
   //增加笔记
   addNote() {
-    if (!this.nowindex) {
+    console.log(this.nowindex)
+    if (this.nowindex === undefined) {
       wx.showToast({
         title: '请先添加一个类目',
         icon: 'none',
@@ -97,9 +100,44 @@ Page({
   },
   //点击类目
   clickIndex(index) {
+    let touchTime = this.data.touchEnd - this.data.touchStart;
     this.nowindex = index.currentTarget.dataset.index
+    //触碰时间小于800ms
+    if (touchTime < 800){
+      this.setData({
+        nowindex: this.nowindex
+      })
+    }else{
+      console.log(this.nowindex)
+      let that = this
+      wx.showModal({
+        title: '提示',
+        content: '删除这个类目吗？（包括类目下的笔记）',
+        success(res) {
+          if (res.confirm) {
+            that.categories.splice(that.nowindex, 1)
+            that.setData({
+              categories: that.categories
+            })
+            wx.setStorageSync('categories', that.categories)
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+
+    }
+  },
+  touchStart(e) {
+    console.log('touchStart',e)
     this.setData({
-      nowindex: this.nowindex
+      touchStart: e.timeStamp
+    })
+  },
+  touchEnd(e){
+    console.log('touchEnd', e)
+    this.setData({
+      touchEnd: e.timeStamp
     })
   },
   //点击笔记

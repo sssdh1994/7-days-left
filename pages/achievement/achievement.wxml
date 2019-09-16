@@ -2,7 +2,7 @@
 <view>
   <view class="container achievement-list">
     <block wx:for="{{achievements}}">
-      <view class="achievement-item" wx:for-index="index" bindtap='clickIndex' data-index="{{index}}">
+      <view class="achievement-item" wx:for-index="index" bindtap='clickIndex' data-index="{{index}}" wx:if="{{item.leftdays>=0}}">
         {{item.title}}
         <span class='leftdays'>
           还剩下

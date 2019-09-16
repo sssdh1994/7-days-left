@@ -7,6 +7,7 @@
     "pages/logs/logs",
     "pages/addnote/addnote",
     "pages/achievement/achievement",
+    "pages/passedachievement/passedachievement",
     "pages/noteindex/noteindex"
   ],
   "window":{
