@@ -25,10 +25,12 @@ Page({
   showRandomNote(){
     //处理笔记，随机显示一个笔记
     this.categories = wx.getStorageSync('categories') || []
+    this.categories = this.categories.filter(item => item.hasOwnProperty('notes'))
     if (this.categories.length > 0){
-      this.categories = this.categories.filter(item => item.hasOwnProperty('notes'))
       let randomCategoriesLength = Math.floor(Math.random() * this.categories.length)
       let randomNotesLength = Math.floor(Math.random() * this.categories[randomCategoriesLength].notes.length)
+      console.log('随机数组数字',randomCategoriesLength)
+      console.log('随机数组数字',randomNotesLength)
       this.randomTitle = this.categories[randomCategoriesLength].title
       this.randomNoteTitle = this.categories[randomCategoriesLength].notes[randomNotesLength].notetitle
       this.randomNoteDetail = this.categories[randomCategoriesLength].notes[randomNotesLength].notedetail

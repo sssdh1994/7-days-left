@@ -21,7 +21,7 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-  <view class='tipsContainer' wx:if="{{categories.length>0}}">
+  <view class='tipsContainer' wx:if="{{randomTitle}}">
     <view class='tipsWord'>随机小笔记</view>
     <view>
       <view class="tipsLeft">{{randomTitle}}</view>

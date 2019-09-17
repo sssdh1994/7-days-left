@@ -32,7 +32,6 @@ page{
 }
 .addCategory{
   margin: 20rpx;
-  border:1rpx solid rgba(0,0,0,0.5);
   border-radius:10rpx;
   font-size: 24rpx;
   background-color:#00bfff
@@ -41,7 +40,6 @@ page{
   float: left;
   margin: 20rpx;
   padding: 20rpx 20rpx;
-  border:1rpx solid rgba(0,0,0,0.5);
   border-radius:10rpx;
   background-color:#00bfff;
   font-size: 24rpx;
