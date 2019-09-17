@@ -17,7 +17,7 @@
 }
 
 .usermotto {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 .achievement-item {
   margin-top: 100px;
@@ -29,4 +29,92 @@
 }
 .leftdays{
   float: right;
+}
+.outer{
+  height: 100%
+}
+.container-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+.achievement-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.achievement-item {
+  margin: 20rpx;
+  padding: 20rpx 20rpx;
+  border:1rpx solid black;
+  width:500rpx;
+  border-radius:10rpx;
+  background-color:#ffffff;
+}
+.leftdays-date{
+  float: right;
+}
+.leftdays{
+  float: right;
+  color: red
+}
+.achievement-item-detail{
+  height:60%;
+}
+.inputdetail{
+  margin-top: -40rpx;
+  padding: 20rpx 20rpx;
+  position: relative;
+  left: calc(50% - 272rpx);
+  border:1rpx solid black;
+  width:500rpx;
+  border-radius:10rpx;
+  background-color:#ffffff;
+  display: block;
+  height:90%;
+}
+.confirm{
+  width: 250rpx;
+  background-color:#00bfff
+}
+.tipsLeft{
+  display: inline-block;
+  margin: 20rpx 10rpx 20rpx 20rpx;
+  padding: 20rpx 20rpx;
+  border:1rpx solid black;
+  width:220rpx;
+  border-radius:10rpx;
+  background-color:#ffffff;
+}
+.tipsRight{
+  display: inline-block;
+  margin: 20rpx 20rpx 20rpx 10rpx;
+  padding: 20rpx 20rpx;
+  border:1rpx solid black;
+  width:220rpx;
+  border-radius:10rpx;
+  background-color:#ffffff;
+}
+.tips{
+  margin: 20rpx;
+  padding: 20rpx 20rpx;
+  border:1rpx solid black;
+  width:500rpx;
+  border-radius:10rpx;
+  background-color:#ffffff;
+}
+.tipsContainer{
+  margin-top: 100rpx
+}
+.tipsWord{
+  padding-top: 20rpx;
+  border-radius:10rpx;
+  color:#808080;
+  text-align: center;
+}
+.noNotes{
+  margin-top: 100rpx;
+  color:#808080;
 }

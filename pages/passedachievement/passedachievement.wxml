@@ -1,6 +1,6 @@
 <!--passedachievement.wxml-->
 <view>
-  <view class="container achievement-list">
+  <view class="container achievement-list"  wx:if="{{achievements.length}}">
     <block wx:for="{{achievements}}">
       <view class="achievement-item" wx:for-index="index" bindtap='clickIndex' data-index="{{index}}">
         {{item.title}}
@@ -12,4 +12,5 @@
       </view>
     </block>
   </view>
+  <view wx:else class='tips'>你还没有完成事迹，坚持下去哦！</view>
 </view>

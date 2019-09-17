@@ -27,3 +27,9 @@
   font-size: 32rpx;
   background-color:#00bfff
 }
+.tips{
+  padding-top: 50rpx;
+  border-radius:10rpx;
+  color:#808080;
+  text-align: center;
+}

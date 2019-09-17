@@ -16,8 +16,18 @@
         天
       </span>
     </view>
+    <view wx:else class='noNotes'>暂时没有即将到来的事迹，快去添加一个吧！</view>
   </block>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <view class='tipsContainer' wx:if="{{categories.length>0}}">
+    <view class='tipsWord'>随机小笔记</view>
+    <view>
+      <view class="tipsLeft">{{randomTitle}}</view>
+      <view class="tipsRight">{{randomNoteTitle}}</view>
+    </view>
+    <view class="tips">{{randomNoteDetail}}</view>
+  </view>
+  <view wx:else class='noNotes'>还没有笔记，快去添加一个吧！</view>
 </view>

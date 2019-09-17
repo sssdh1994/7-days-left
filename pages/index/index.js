@@ -6,6 +6,10 @@ Page({
   data: {
     achievements: [],
     //achievements: [],
+    categories:[],
+    randomTitle:'',
+    randomNoteTitle: '',
+    randomNoteDetail: '',
     leftTime: 0,
     motto: '做一个,自律的人',
     userInfo: {},
@@ -18,21 +22,39 @@ Page({
       url: '../logs/logs'
     })
   },
-  onShow: function () {
-    let compare = function (a, b) {
-      return a.leftdays - b.leftdays
+  showRandomNote(){
+    //处理笔记，随机显示一个笔记
+    this.categories = wx.getStorageSync('categories') || []
+    if (this.categories.length > 0){
+      this.categories = this.categories.filter(item => item.hasOwnProperty('notes'))
+      let randomCategoriesLength = Math.floor(Math.random() * this.categories.length)
+      let randomNotesLength = Math.floor(Math.random() * this.categories[randomCategoriesLength].notes.length)
+      this.randomTitle = this.categories[randomCategoriesLength].title
+      this.randomNoteTitle = this.categories[randomCategoriesLength].notes[randomNotesLength].notetitle
+      this.randomNoteDetail = this.categories[randomCategoriesLength].notes[randomNotesLength].notedetail
+      this.setData({
+        randomTitle: this.randomTitle,
+        randomNoteTitle: this.randomNoteTitle,
+        randomNoteDetail: this.randomNoteDetail
+      })
     }
+  },
+  showFirstAchievement(){
+    //处理事迹，只显示第一个未完成的事迹
     this.achievements = wx.getStorageSync('achievements') || []
     let today = new Date().getTime()
     this.achievements.map(item => item.leftdays = Math.floor(((item.targetdate - today) / 1000 / 60 / 60 / 24) + 1))
     this.achievements = this.achievements.filter(item => item.leftdays >= 0)
-    this.achievements.sort(compare)
     let tem = this.achievements[0]
     this.achievements = []
     this.achievements.push(tem)
     this.setData({
       achievements: this.achievements
     })
+  },
+  onShow: function () {
+    this.showFirstAchievement()
+    this.showRandomNote()
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
