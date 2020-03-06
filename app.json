@@ -1,6 +1,5 @@
 {
-  "pages":[
-    
+  "pages": [
     "pages/index/index",
     "pages/addachievement/addachievement",
     "pages/note/note",
@@ -10,17 +9,17 @@
     "pages/passedachievement/passedachievement",
     "pages/noteindex/noteindex"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#00bfff",
     "navigationBarTitleText": "7days left",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "grey",
     "selectedColor": "#ffffff",
     "borderStyle": "white",
-    "backgroundColor":"#00bfff",
+    "backgroundColor": "#00bfff",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -39,5 +38,6 @@
         "text": "我的"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
